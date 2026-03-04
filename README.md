@@ -1,7 +1,7 @@
 # shop_car_nwr
 Un shop car basico muy basico
 
-Video:[Video](https://youtu.be/sgI6JwTRp0Y)
+Video: [Video](https://youtu.be/sgI6JwTRp0Y)
 ![Imagen](media/screenshot.png)
 
 
