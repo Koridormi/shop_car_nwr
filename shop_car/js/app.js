@@ -13,6 +13,12 @@ function registarEventListeners() {
     // eliminar productos
     carrito.addEventListener('click', eliminarProducto);
 
+    // muestra los arituclos del localStorage
+    document.addEventListener('DOMContentLoaded',() => {
+        articulos = JSON.parse(localStorage.getItem('articulos')) || [];
+        carritoHTML();
+    });
+
     // vaciar carrito
     cleanshop.addEventListener('click',() => {
         articulos = []; // se resetea el array
@@ -99,6 +105,9 @@ function carritoHTML() {
         // agrega el HTML al tbody
         shopcar.appendChild(row);
     });
+
+    // sync storage
+    syncStorage();
 };
 
 // limpia el tbody
@@ -106,5 +115,12 @@ function limpiarHTML() {
     ///shopcar.innerHTML = ''; ---- esto casi ya no se usa...
     while(shopcar.firstChild) {
         shopcar.removeChild(shopcar.firstChild)
-    }
+    };
+    
+    syncStorage(); // era aqui LOL
+};
+
+// local storage
+function syncStorage() {
+    localStorage.setItem('articulos',JSON.stringify(articulos));
 };
